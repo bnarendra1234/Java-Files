@@ -858,7 +858,7 @@ for (int i = 1; i <= 5; i++) {
  
 
 Key Points:
-The loop runs until the condition becomes false.
+ loop runs until the condition becomes false.
 Useful for definite iterations where the number of repetitions is known.
 
 
