@@ -1,0 +1,484 @@
+1. What is a static keyword in Java?
+
+Static is a Non-Access Modifier. Static can be applied to variable, method, nested class,  and initialization blocks (static block).
+
+ 
+
+2. Why main() method is declared as static?
+
+If our main() method is not declared as static then the JVM has to create an object first and call which causes the problem of having extra memory allocation.
+
+ 
+
+3. Can constructors be static in Java?
+
+In general, a static method means that “The Method belongs to the class and not to any particular object” but a constructor is always invoked with respect to an object, so it makes no sense for a constructor to be static.
+
+ 
+
+4. Can we use this to refer static members?
+
+ Yes, it's possible to access the static variables of a class using this but it's discouraged and as per best practices this should be used on nonstatic reference.
+
+ 
+
+5. What are all the differences between this and the super keyword?
+
+This refers to the current class object whereas super refers to the superclass object
+Using this we can access all non-static methods and variables. Using super we can access superclass variables and methods from sub-class.
+Using this(); call we can call other constructors in the same class. Using super we can call superclass constructor from sub-class constructor.
+ 
+
+6. What is a final method?
+
+When a method is declared as final, then it is called a final method, The subclass can call the final method of the parent class but cannot override it.
+
+ 
+
+7. Can a main() method be declared final?
+
+Yes, the main() method can be declared as final and cannot be overridden.
+
+ 
+
+8. What is a Static Final variable in Java?
+
+When have declared a variable as static final then the variable becomes a CONSTANT.  Only one copy of the variable exists which cannot be changed by any instance.
+
+
+
+
+Inheritance
+ 
+
+We will cover the following:-
+
+Definition
+Is-A relationship 
+Has-A relationship
+Types of Inheritance
+single Inheritance
+multilevel Inheritance
+hierarchical Inheritance
+multiple inheritance not supported by java?
+ 
+
+ 
+
+Definition:-
+
+Inheritance is a mechanism in which one object acquires all the properties and behaviors of a parent object. It is an important part of oops
+
+ 
+
+Inheritance provides a way to create a new class from an existing class. The new class is an extended version of the existing class such that it inherits all the non-private fields (variables) and methods of the existing class. The existing class is used as a starting point or as a base to create the new class.
+
+ 
+
+The Is-A Relationship
+
+ 
+
+After reading the above definition, the next question that comes to your mind is What is the use case of inheritance? Well, the answer is that wherever we come across an IS-A relationship between objects, we can use inheritance.
+
+
+ 
+
+
+ 
+
+The Has-A relationship
+
+ 
+
+
+here you can see these are not is-A examples instead these are Has-A relationships between them.
+
+ 
+
+Types of Inheritance:-
+
+On the basis of class, there can be three types of inheritance in java: single, multilevel, and hierarchical.
+
+In java programming, multiple and hybrid inheritance is supported through interface only. We will learn about interfaces later.
+
+ 
+
+1. Single 
+
+2. Multi-level 
+
+3. Hierarchical 
+
+4. Multiple
+
+ 5. Hybrid 
+
+
+Note: - Multiple inheritance is not supported in Java through the class.
+
+When one class inherits multiple classes, it is known as multiple inheritance. For Example:
+
+ 
+
+
+Single Inheritance 
+
+When a class inherits another class, it is known as single inheritance.
+
+ 
+
+
+Multilevel inheritance 
+
+When there is a chain of inheritance, it is known as multilevel inheritance.
+
+ 
+
+
+ 
+
+Hierarchical inheritance 
+
+When two or more classes inherit a single class, it is known as hierarchical inheritance. here in the example below, you can see two different classes are inherited through the same single class.
+
+ 
+
+ 
+
+ 
+
+
+ 
+
+multiple inheritance is not supported by java?
+
+To reduce the complexity and simplify the language, multiple inheritance is not supported in java.
+
+
+
+
+Polymorphism
+ 
+
+We will cover the following:-
+
+Definition
+Types of polymorphism
+Compile-time polymorphism
+Method overloading  with example
+Run-time polymorphism.
+Method overriding with example 
+ 
+
+Definition:-
+
+The word Polymorphism is a combination of two Greek words, Poly means many and Morph means forms.
+
+In programming, polymorphism refers to the same object exhibiting different forms and behaviors. For example, take the Shape Class. The exact shape you choose can be anything. It can be a rectangle, a circle, a polygon, or a diamond. So, these are all shapes but their properties are different. This is called Polymorphism
+
+
+ 
+
+ 
+
+Types of polymorphism
+
+Compile-time polymorphism
+
+Runtime polymorphism
+
+ 
+
+ 
+
+Compile-time polymorphism 
+
+It is also known as static polymorphism. This type of polymorphism is achieved by Method Overloading or operator overloading
+
+Note:- operator overloading is not supported by java.
+
+ 
+
+Method overloading:-
+
+when we have more than one function/method in the same class with the same name and number of arguments. then these functions are known as overloaded functions. Functions can be overloaded by a change in the number of arguments or/and a change in the type of arguments.
+
+Note:-different return type is not considered as overloading.
+
+ 
+
+                                               
+
+Here, you can see there are three functions in the same class having the same name and the same number of arguments. So these functions are overloaded.
+
+ 
+
+ 
+
+Here we will look at an example of the same with the help of a program written in java. We have overloaded multiply function using different arguments types, and a number of arguments are different in each function.
+
+ 
+
+ 
+
+Main.java
+
+
+Run-time polymorphism
+
+It is also known as Dynamic Method Dispatch. It is a process in which a function call to the overridden method is resolved at Runtime. Method Overriding achieves this type of polymorphism. On the other hand, method overriding occurs when a derived class has a definition for one of the member functions of the base class. That base function is said to be overridden.
+
+ 
+
+Method overriding
+
+In a simple language, when we have two classes, one is child class, and the other is parent class, and when we write the same function in both the child class and the parent class, the method is said to be overridden. This concept is known as runtime polymorphism because the compiler will decide at runtime to which function it will call during the program's execution.
+
+ 
+
+
+Here, you can easily understand that the run method is called at the runtime, according to whether the vehicle is behaving like a car, or the vehicle is behaving like the vehicle itself.
+
+
+
+Abstraction
+ 
+
+we will cover the following:-
+
+Definition
+an example from java
+abstract data types
+Rules  and implementation of abstraction in java
+ 
+
+ 
+
+ 
+
+Definition:-
+
+Abstraction in Object-Oriented Programming refers to showing only the essential features of an object to the user and hiding the inner details to reduce complexity. It can be put this way that the user only has to know “what an object does?” rather than “how it does?”.
+
+Real-world Examples #
+
+ 
+
+
+ 
+
+ 
+
+
+The above illustration of the users and the admin of an application is a good real-world example of abstraction
+
+A user can only use and interact with the limited features of an application and is unaware of the implementation details or the way the application was developed. Usually, the users are only concerned with the functionality of an application.
+
+An admin can have the access to a lot more features of the application and nothing is hidden from him. The admin can monitor the activity of the users, knows how the application was developed and can implement new features by deploying them in the application.
+
+In the above example, the abstraction is being applied to the user but not to the admin.
+
+ 
+
+The user presses the volume button
+
+volumeUp()
+
+ 
+
+The volume rises
+
+
+ 
+
+Let’s look into another example of abstraction. Take the Volume button on a television remote. With a click of a button, we request the T.V. to increase its volume. Let’s say the button calls the Volume Up() function. The T.V. responds by producing a sound larger than before. How the inner circuitry of the T.V. implements this is oblivious to us, yet we know the exposed function needed to interact with the T.V.'s volume.
+
+An Example from Java 
+
+In Java, one can very easily see abstraction in action. Let’s take an example of Java Math class. There are a lot of in-built methods in this class that can be used by the programmer to get facilitated. Let’s use a few methods in our code to access the in-built functionality:
+
+ 
+
+class TestAbstraction {
+
+ 
+
+ public static void main( String args[] ) {
+
+ 
+
+int min = Math.min(15,18);    //find min of two numbers
+
+ 
+
+double square = Math.pow(2,2); //calculate the power of a number
+
+ 
+
+System.out.println("The min of 15 & 18 is: "+ min); System.out.println("The square of 2 is: " + square)
+
+ 
+
+           }
+
+}
+
+    
+
+In the above code:
+
+ 
+
+Math.min() find min of two num
+
+Math.max() find max of two num
+
+ 
+
+But the user doesn’t have to know about the implementation of these two methods inside the Math class
+
+ 
+
+Abstract Data Types 
+
+ 
+
+By the definition of abstract data types, the users only get to know the essentials i.e. the functionality of those data types, and the ‘how the implementation should be done to achieve the specified functionality?’ part is hidden.
+
+An example of abstract data type can be built in stack class in java in  which the user knows that it has pop push functions but the user doesn’t know how there are implemented
+
+ 
+
+Rules for java abstract class:-
+
+
+ 
+
+How can we implement abstraction in java?
+
+
+ 
+
+when you will compiler this code by creating the object of the employee class you will get to know that this will fall into error as this violates the rules of abstraction.AS you can not create an object of the abstract class instead you can inherit it.
+
+
+Now we will follow the abstraction rules. we will not create the object directly instead we will inherit the abstract class first and implement the abstract methods of the parent class in the child class then we will create the object of the child class.
+
+
+ 
+Interface
+ 
+
+We will cover the following:-
+
+Definition
+Declaration
+why do we use an interface
+Relationship between classes and interface
+Multiple inheritance in java through the interface
+An Example of Multiple inheritance
+ 
+
+Definition:-
+
+An interface can be thought of as a contract that a class has to fulfill while implementing an interface. According to this contract, the class that implements an interface has to @Override all the abstract methods declared in that very interface.
+
+ 
+
+An interface can be used to achieve 100% abstraction as it contains the method signatures/abstract methods(what to be done) and no implementation details (how to be done) of these methods. In this way, interfaces satisfy the definition of abstraction. The implementation techniques of the methods declared in an interface are totally up to to the classes implementing that interface.
+
+ 
+
+Declaration
+
+the interface is declared with the Interface keyword
+
+ 
+
+interface interfaceName { 
+
+    // Code goes here 
+
+} 
+
+ 
+
+Why do we use an interface?
+
+
+ 
+
+The relationship between classes and interfaces
+
+a class extends another class, an interface extends another interface, but a class implements an interface.
+
+ 
+
+
+Example of interface
+
+
+ 
+
+Multiple inheritance in java through the interface
+
+If a class implements multiple interfaces, or an interface extends multiple interfaces, it is known as multiple inheritance.                                                                     
+
+ 
+
+An Example of multiple inheritance using the interface
+
+Interview Questions
+ 
+
+Q1.What is the difference between compile-time polymorphism and runtime polymorphism?
+
+ 
+
+
+ 
+
+Q2.What is the Java instanceOf operator?
+
+The instanceof in Java is also known as type comparison operator because it compares the instance with type. It returns either true or false. If we apply the instanceof operator with any variable that has a null value, it returns false.
+
+Q3.What is the difference between abstraction and encapsulation?
+
+Abstraction hides the implementation details whereas encapsulation wraps code and data into a single unit.
+
+ 
+
+ 
+
+Q4.What are the differences between abstract class and interface?
+
+
+Q5.What is a superclass?
+
+A superclass—also called a base class—is a class that is a parent for more classes rather than objects. It usually contains the most basic code and data that will be used by every class and object under it. Using the above example, ‘beverage’ and ‘machine’ could be superclasses for ‘soda’ and ‘computer.’
+
+Q6.What is a subclass?
+
+A subclass is a class that falls under a superclass. It inherits from the superclass and is considered to have an “is-a” relationship with the superclass. 
+
+Q7.Are there any limitations of Inheritance?
+
+Yes, with more powers comes more complications. Inheritance is a very powerful feature in OOPs, but it has some limitations too. Inheritance needs more time to process, as it needs to navigate through multiple classes for its implementation. Also, the classes involved in Inheritance - the base class and the child class, are very tightly coupled together. So if one needs to make some changes, they might need to do nested changes in both classes. Inheritance might be complex for implementation, as well. So if not correctly implemented, this might lead to unexpected errors or incorrect outputs.
+
+Q8.What are the various types of inheritance?:
+
+Single inheritance
+Multiple inheritances
+Multi-level inheritance
+Hierarchical inheritance
+Hybrid inheritance
+ 
+
+Q9. What is meant by static polymorphism?
+
+Static Polymorphism is commonly known as the Compile time polymorphism. Static polymorphism is the feature by which an object is linked with the respective function or operator based on the values during the compile time. Static or Compile time Polymorphism can be achieved through Method overloading or operator overloading.
+
+ 
+ 
+

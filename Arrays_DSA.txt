@@ -1,0 +1,66 @@
+
+
+Use Cases of Arrays
+
+Arrays are fundamental data structures used in a wide range of programming problems. 
+They provide a convenient way to store and manipulate collections of elements. 
+Here are some common use cases and examples of how arrays are used in coding questions:
+
+Frequency Count:
+ 
+
+Counting the frequency of each element in an array is another common problem. By using additional data structures like hash maps or arrays of counters, 
+you can track the occurrences of each element.
+
+ 
+
+Two Sum Problem:
+ 
+
+The Two Sum problem involves finding two numbers in an array that add up to a given target value. 
+By using a hash map or sorting the array and employing two pointers, you can efficiently solve this problem.
+
+ 
+
+Sliding Window Technique:
+ 
+
+The sliding window technique utilizes arrays to solve problems where you must maintain a subset or fixed-size subset while moving through the main array.
+
+ 
+
+Dynamic Programming:
+ 
+
+Arrays are extensively used in dynamic programming to store and retrieve intermediate results for optimising  computations and solving complex problems.
+
+ 
+
+Example Problem Statement:
+ 
+
+Given an array of integers, find the maximum difference between any two elements in the array.
+
+ 
+
+#include <iostream>
+using namespace std;
+
+
+int main() {
+    int arr[] = {7, 2, 3, 10, 6};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    int maxDiff = 0;
+
+
+    for (int i = 0; i < size; i++) {
+        for (int j = i + 1; j < size; j++) {
+            int diff = abs(arr[i] - arr[j]);
+            maxDiff = max(maxDiff, diff);
+        }
+    }
+
+
+    cout << "Maximum Difference: " << maxDiff << endl;
+    return 0;
+}

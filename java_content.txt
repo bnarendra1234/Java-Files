@@ -1,0 +1,1264 @@
+Input / output in java
+ 
+
+ 
+
+Printing in java:
+
+Using println() method:
+
+
+Prints text on the console and moves the cursor to the next line.
+
+System.out.println("coding");
+system.out.println("ninjas");
+// output: 
+// coding
+// ninjas
+using print() method:
+
+
+Prints text on the console without moving to the next line.
+
+System.out.print("coding");
+system.out.print("ninjas");
+// output: codingninjas
+using printf() method:
+
+
+Prints formatted text.
+
+System.out.printf("pi = %.2f\n", math.pi);  // output: pi = 3.14  
+system.out.printf("n = %.4f\n", 5.2f);     // output: n = 5.2000
+example program:
+
+ 
+
+Public class test {
+    public static void main(string args[]) {
+        int age = 21;
+        string firstname = "king", lastname = "kong";
+        system.out.println("my name is " + firstname + " " + lastname);
+        system.out.println("my age is " + age);
+    }
+}
+// Output:
+// my name is king kong
+// my age is 21
+ 
+
+Key points:
+
+Use + for string concatenation.
+Println() and print() differ in cursor placement.
+Printf() formats output precisely.
+
+
+Taking input in java
+ 
+
+ 
+
+In java, you can take user input primarily through two classes:
+
+Scanner class (in java.util package)
+bufferedreader class
+1. Using scanner class
+the scanner class is commonly used to read input of primitive types (e.g., Int, double) and strings. Import java.util.scanner to use it.
+
+Methods of scanner class in java:
+
+Example : 
+
+Import java.util.scanner;
+class takinginputfromuser {
+     public static void main(string argo[]) {
+ 
+            // Creating an object of scanner class
+            scanner sc = new scanner(system.in);
+ 
+            // Read integer value from the user
+            system.out.println(“enter first number :”);
+            int a = sc.nextint();
+ 
+            System.out.println(“enter second number :”);
+            int b = sc.nextint();
+ 
+          // Adding two values
+          int c = a + b;
+          
+         // Printing the sum
+         system.out.println(“sum is : “ +c);
+    }
+}
+//Output
+//enter first number : 10
+//enter second number : 20
+//sum is : 30
+
+
+
+2. Using bufferedreader class
+ 
+
+The bufferedreader class in java is another way to take input from the user. It is more efficient than the scanner class for reading large input data and is part of the java.io package.
+
+ 
+
+Steps to use bufferedreader:
+
+Import the java.io package.
+Create a bufferedreader object using inputstreamreader.
+Use the readline() method to read input as a string.
+Convert the string to other data types (if needed).
+Example: reading an integer
+
+ 
+
+Import java.io.bufferedreader;
+import java.io.inputstreamreader;
+import java.io.ioexception;
+
+Class takinginputusingbufferedreader {
+    public static void main(string[] args) throws ioexception {
+        bufferedreader br = new bufferedreader(new inputstreamreader(system.in));
+
+        System.out.println("enter a number:");
+        int number = integer.parseint(br.readline()); // convert string to integer
+
+        System.out.println("you entered: " + number);
+    }
+}
+//Output:
+//enter a number: 25 
+//you entered: 25  
+ 
+Limitations:
+handles only string input; parsing is needed for other data types.
+Requires exception handling (ioexception).
+
+
+Features of java
+simple: easy to learn with syntax similar to c++. Unused features like explicit pointers and operator overloading are removed. Includes automatic garbage collection.
+Object-oriented: based on oop concepts like classes, objects, inheritance, and encapsulation, making development and maintenance easier.
+Platform independent: write once, run anywhere. Java code is compiled into platform-independent bytecode.
+Robust: strong memory management, automatic garbage collection, and exception handling enhance reliability.
+Portable: bytecode can run on any platform.
+Multithreaded: supports multiple threads sharing memory, ideal for web and multimedia applications.
+Distributed: enables creating distributed applications using rmi and ejb.
+Secure: bytecode is non-readable, enhancing security.
+ 
+
+Uses of java
+banking: used for transaction management.
+Mobile app development: core language for android applications.
+Desktop applications: create gui apps using awt, swing, or javafx.
+Big data: hadoop's mapreduce framework is written in java.
+Web applications: frameworks like spring and hibernate support robust web development.
+
+
+Main() method in java
+ 
+
+ 
+
+The main() method is where java program execution begins. Here's a simple example:
+
+ 
+
+Public class helloworld {
+    public static void main(string args[]) {
+        system.out.println("hello world");
+    }
+}
+Public: makes the method accessible to the jvm from outside the class.
+Static: allows the method to be called without creating an object of the class.
+Void: the method doesn't return any value.
+Main: the name of the method where execution starts.
+String args[]: an array that can hold command-line arguments passed to the program.
+
+
+Comments in java
+ 
+
+ 
+
+Comments are non-executable statements that improve code readability and help with debugging and maintenance.
+
+ 
+
+Types of comments:
+
+Single-line comment:
+used for commenting one line.
+Syntax: // comment
+example:
+
+ 
+
+// Print "hello world"
+system.out.println("hello world");
+multi-line comment:
+used for commenting multiple lines.
+Syntax: /* comment */
+example:
+
+ 
+
+/* Declare a variable and print its value */
+int a = 10;
+system.out.println(a);
+documentation comment:
+used to generate documentation for code, especially for projects.
+Syntax: /** comment */
+example:
+
+ 
+
+/**
+ * Calculates the product of four integers.
+ * @Param num1 first parameter
+ * @param num2 second parameter
+ * @return product of the integers
+ */
+Public int findpro(int num1, int num2, int num3, int num4) {
+    return (num1 * num2 * num3 * num4);
+}
+
+
+Operators in java
+ 
+
+ 
+
+Operators in java perform operations on one, two, or three operands and return a result. The main types of operators are:
+
+Arithmetic operators
+unary operators
+assignment operators
+relational operators
+logical operators
+bitwise operators
+ternary operators
+instance of operators
+
+
+Arithmetic operators
+ 
+
+ 
+
+Arithmetic operators in java perform basic math operations:
+
+Addition (+): adds two numbers.
+Subtraction (-): subtracts two numbers.
+Multiplication (*): multiplies two numbers.
+Division (/): divides two numbers.
+Modulus (%): returns the remainder of a division.
+Example:
+
+ 
+
+Public class arithmeticoperators {
+    public static void main(string args[]) {
+        int a = 50, b = 20;
+        
+        System.out.println("addition: " + (a + b));
+        system.out.println("subtraction: " + (a - b));
+        system.out.println("multiplication: " + (a * b));
+        system.out.println("division: " + (a / b));
+        system.out.println("modulus: " + (a % b));
+    }
+}
+
+
+Unary operators
+ 
+
+ 
+
+Unary operators in java operate on a single operand to perform operations like incrementing, negation, or inverting boolean values.
+
+Unary minus (-):
+converts a positive value to negative and vice versa.
+Example:
+
+ 
+
+Int num1 = 10;  
+num1 = -num1;  // -10
+int num2 = -20;  
+num2 = -num2;  // 20
+unary not (!):
+Inverts a boolean value (true to false, and vice versa).
+Example:
+
+ 
+
+Boolean result = !(10 < 20);  // False
+increment (++):
+increments a variable by 1.
+
+Post-increment: after evaluating the variable.
+Pre-increment: before evaluating the variable.
+Example:
+
+ 
+
+Int num = 10;
+system.out.println(num++);  // 10 (then num becomes 11)
+system.out.println(++num);  // 12
+decrement (--):
+decreases a variable by 1.
+
+Post-decrement: after evaluating the variable.
+Pre-decrement: before evaluating the variable.
+Example:
+
+ 
+
+Int num = 10;
+system.out.println(num--);  // 10 (then num becomes 9)
+system.out.println(--num);  // 8
+bitwise complement (~):
+returns the one's complement of a number.
+Example:
+
+ 
+
+Int num = 7;
+system.out.println(~num);  // -8
+
+Assignment operators
+ 
+
+ 
+
+Assignment operators are used to assign values to variables. Common operators include:
+
++=: Adds the right operand to the left operand and assigns it.
+
+ 
+
+Int num = 10;
+num += 20;  // num = num + 20;
+system.out.println(num);  // output: 30
+-=: subtracts the right operand from the left and assigns it.
+
+ 
+
+Int num = 20;
+num -= 10;  // num = num - 10;
+system.out.println(num);  // output: 10
+*=: multiplies the left operand by the right and assigns it.
+
+ 
+
+Int num = 10;
+num *= 5;   // num = num * 5;
+system.out.println(num);  // output: 50
+/=: divides the left operand by the right and assigns it.
+
+ 
+
+Int num = 10;
+num /= 2;   // num = num / 2;
+system.out.println(num);  // output: 5
+%=: modulo the left operand by the right and assigns it.
+
+ 
+
+Int num = 19;
+num %= 2;   // num = num % 2;
+system.out.println(num);  // output: 1
+
+
+Relational operators
+ 
+
+ 
+
+Relational operators compare two operands and return a boolean result. They are used in conditions and loops. Below are the common relational operators:
+
+Equal to (==): checks if two operands are equal.
+Example:
+
+ 
+
+System.out.println(10 == 20);  // false
+not equal to (!=): Checks if two operands are not equal.
+Example:
+
+ 
+
+System.out.println(10 != 20);  // True
+greater than (>): checks if the first operand is greater.
+Example:
+
+ 
+
+System.out.println(10 > 20);  // false
+greater than or equal to (>=): checks if the first operand is greater than or equal.
+Example:
+
+ 
+
+System.out.println(10 >= 8);  // true
+less than (<): checks if the first operand is less.
+Example:
+
+ 
+
+System.out.println(10 < 15);  // true
+less than or equal to (<=): checks if the first operand is less than or equal.
+Example:
+
+ 
+
+System.out.println(10 <= 5);  // false
+
+
+Logical operators
+ 
+
+ 
+
+Logical operators perform operations like and, or, and not on boolean values, returning true or false.
+
+Logical and (&&): returns true if both conditions are true.
+
+ 
+
+Int a = 10, b = 20, c = 30;
+system.out.println((b > a) && (c > b));  // true
+system.out.println((b > a) && (c < b));  // false
+logical or (||): returns true if at least one condition is true.
+
+ 
+
+System.out.println((b > a) || (c < b));  // true
+system.out.println((b < a) || (c < b));  // false
+logical not (!): Reverses the boolean value.
+
+ 
+
+System.out.println(a != B);  // true
+system.out.println(a == b);  // false
+
+
+Bitwise operators
+ 
+
+ 
+
+Bitwise operators perform bit-level operations on numbers. The key operators in java are:
+
+Bitwise and (&):
+result is 1 only if both bits are 1.
+Example: 6 & 7 → 6
+bitwise or (|):
+result is 1 if any of the two bits is 1.
+Example: 6 | 7 → 7
+bitwise not (~):
+inverts all bits of a number.
+Example: ~6 → -7
+bitwise xor (^):
+result is 1 if bits are different.
+Example: 6 ^ 7 → 1
+left shift (<<):
+shifts bits to the left, filling with zeros.
+Example: 8 << 2 → 32
+right shift (>>):
+shifts bits to the right, filling with the sign bit.
+Example: 8 >> 2 → 2
+unsigned right shift (>>>):
+shifts bits to the right, filling with zeros.
+Example: 240 >>> 2 → 60
+note: left and right shift operators may behave unpredictably with negative numbers or excessive shifts (e.g., 1 << 33).
+
+Ternary operator
+ 
+
+ 
+
+The ternary operator is a shorthand for if-else, taking three operands:
+
+ 
+
+Variable = expression1 ? Expression2 : expression3;
+ 
+
+If expression1 is true, expression2 is evaluated; otherwise, expression3 is evaluated.
+
+ 
+
+Example:
+
+ 
+
+Public class ternaryoperator {
+    public static void main(string args[]) {
+        int a = 50, b = 100;
+        int minimum = (a < b) ? A : b;
+        system.out.println("minimum number = " + minimum);
+    }
+}
+// Output: minimum number = 50
+
+
+Instanceof operator
+ 
+
+ 
+
+The instanceof operator checks if an object is an instance of a specific class, subclass, or interface. It returns true or false.
+
+ 
+
+Example:
+
+ 
+
+Public class instanceofexample {
+    public static void main(string args[]) {
+        parentclass obj1 = new parentclass();
+        childclass obj2 = new childclass();
+
+        System.out.println("obj1 is instance of parentclass = " + (obj1 instanceof parentclass));
+        system.out.println("obj1 is instance of childclass = " + (obj1 instanceof childclass));
+        system.out.println("obj2 is instance of childclass = " + (obj2 instanceof childclass));
+    }
+}
+
+Class parentclass {}
+interface myinterface {}
+class childclass extends parentclass implements myinterface {}
+ 
+
+Output:
+
+ 
+
+Obj1 is instance of parentclass = true
+obj1 is instance of childclass = false
+obj2 is instance of childclass = true
+ 
+
+Null check:
+
+ 
+
+Instanceofoperator obj = null;
+system.out.println(obj instanceof instanceofoperator);  // false
+ 
+
+The operator returns false if the object is null.
+
+Control statements
+ 
+ 
+In java, code executes sequentially by default, but control flow statements manage the execution flow. However, java offers specific statements to manage and direct the flow of program execution, known as control flow statements.
+
+ 
+
+Java's control flow statements are categorized into three types:
+
+Conditional statements: it allows a program to make decisions and execute specific blocks of code based on whether a condition evaluates to true or false.
+If statement
+if-else statement
+nested if-statement
+if-else-if ladder
+switch statement
+looping statements: iteration statements in java are used to repeatedly execute a block of code as long as a specified condition is true.
+Do-while loop
+while loop
+for loop
+for-each loop
+jump statements: it is used to transfer control to different parts of a program, breaking the normal flow of execution.
+Break statement
+continue statement
+return statement
+
+
+If statement
+ 
+
+ 
+
+The if statement evaluates a condition. If the condition is true, the corresponding block of code is executed.
+
+ 
+
+Syntax:
+
+ 
+
+If (condition) {
+    // code to execute if condition is true
+}
+ 
+
+Example:
+
+ 
+
+Int age = 20;
+if (age >= 18) {
+    system.out.println("eligible to vote");
+}
+ 
+
+Use case:
+
+Checking eligibility (e.g., Age verification).
+Validating conditions in simple scenarios.
+
+
+If-else statement
+ 
+
+ 
+
+An if-else statement is a control structure that determines which statements to choose based on a set of conditions.
+
+ 
+
+Syntax:
+
+ 
+
+If (condition) {
+    // block executed if condition is true
+} else {
+    // block executed if condition is false
+}
+ 
+
+Example:
+
+ 
+
+Public class javaifelseexample {
+    public static void main(string[] args) {
+        int a = 49;
+
+        // Determine if 'a' is even or odd
+        if (a % 2 == 0) {
+            system.out.println("even number");
+        } else {
+            system.out.println("number is odd");
+        }
+    }
+}
+ 
+
+Output:
+
+ 
+
+Number is odd
+
+
+F-else-if ladder
+ 
+
+ 
+
+The if-else-if ladder in java evaluates conditions sequentially from top to bottom. When a condition is true, its block executes, and the rest are skipped. If no conditions are true, the else block (if present) serves as a default. Without an else, no action occurs for false conditions.
+
+ 
+
+Syntax:
+
+ 
+
+If(condition1) {
+    // code for condition1
+} else if(condition2) {
+    // code for condition2
+} else if(condition3) {
+    // code for condition3
+} else {
+    // default code if all conditions are false
+}
+ 
+
+Example:
+
+ 
+
+Public class javaifelseifladder {
+    public static void main(string[] args) {
+        int a = 50;
+
+        If (a == 30)
+            system.out.println("a is 30");
+        else if (a == 45)
+            system.out.println("a is 45");
+        else if (a == 50)
+            system.out.println("a is 50");
+        else
+            system.out.println("a is not present");
+    }
+}
+ 
+
+Output:
+
+ 
+
+A is 50
+
+
+Switch statement
+ 
+
+ 
+The switch statement evaluates a single variable or expression against multiple possible values (cases). It executes the block of code corresponding to the matching case.
+
+ 
+
+Syntax:
+
+ 
+
+Switch (variable) {
+    case value1:
+        // code for value1
+        break;
+    case value2:
+        // code for value2
+        break;
+    default:
+        // code if no cases match
+}
+ 
+
+Example:
+
+ 
+
+Int day = 3;
+switch (day) {
+    case 1:
+        system.out.println("monday");
+        break;
+    case 2:
+        system.out.println("tuesday");
+        break;
+    case 3:
+        system.out.println("wednesday");
+        break;
+    default:
+        system.out.println("invalid day");
+}
+ 
+
+Use case:
+
+Menu-driven programs (e.g., Selecting options).
+Mapping values like days of the week, grades, or roles.
+
+
+Do-while loop
+ 
+
+ 
+
+Executes the loop body at least once because the condition is checked at the end.
+Use when you need to ensure the loop runs at least once.
+Syntax:
+
+ 
+
+Initialization;
+do {
+    // statements
+    update_expression;
+} while (condition);
+ 
+
+Example:
+
+ 
+
+Int I = 1;
+do {
+    system.out.print(I + " ");
+    i++;
+} while (I <= 10);
+// output: 1 2 3 4 5 6 7 8 9 10
+
+while Loop
+ 
+
+
+A while loop repeatedly executes a block of code as long as the specified condition is true.
+
+ 
+
+Syntax:
+ 
+
+while (condition) {
+    // Code to execute
+}
+ 
+
+How It Works:
+The condition is evaluated.
+If true, the code inside the loop executes.
+After execution, the condition is rechecked.
+The loop stops when the condition becomes false.
+ 
+
+Example:
+ 
+
+int i = 1;
+while (i <= 5) {
+    System.out.println(i);
+    i++;
+}
+// Output: 1 2 3 4 5
+ 
+
+Use Cases:
+Repeating tasks until a condition is met.
+Reading data from a source until the end is reached.
+
+
+For Loop
+ 
+
+ 
+
+The for loop in Java is used to execute a block of code a specific number of times, making it ideal for iterating over sequences or ranges.
+
+ 
+
+Syntax:
+ 
+
+for (initialization; condition; update) {
+    // Code to execute
+}
+Initialization: Initializes the loop variable (executed once).
+Condition: Checks whether the loop should continue.
+Update: Updates the loop variable after each iteration.
+ 
+
+Example:
+ 
+
+for (int i = 1; i <= 5; i++) {
+    System.out.println(i);
+}
+// Output: 1 2 3 4 5
+ 
+
+Key Points:
+The loop runs until the condition becomes false.
+Useful for definite iterations where the number of repetitions is known.
+
+
+
+For-Each Loop
+ 
+
+ 
+
+Simplifies iterating through collections or arrays when the index is not needed.
+Syntax:
+
+ 
+
+for (Type element : collection/array) {
+    // statements
+}
+ 
+
+Example:
+
+ 
+
+String[] words = {"Coding", "Ninjas", "Welcomes", "You"};
+for (String word : words) {
+    System.out.println(word);
+}
+// Output:
+// Coding
+// Ninjas
+// Welcomes
+// You
+
+
+For-Each Loop
+ 
+
+ 
+
+Simplifies iterating through collections or arrays when the index is not needed.
+Syntax:
+
+ 
+
+for (Type element : collection/array) {
+    // statements
+}
+ 
+
+Example:
+
+ 
+
+String[] words = {"Coding", "Ninjas", "Welcomes", "You"};
+for (String word : words) {
+    System.out.println(word);
+}
+// Output:
+// Coding
+// Ninjas
+// Welcomes
+// You
+
+
+continue Statement
+ 
+
+ 
+
+Skips the current iteration of a loop.
+Labeled continue: Skips to the next iteration of a specific labeled loop.
+Example:
+
+ 
+
+// Regular continue
+for(int i = 1; i <= 5; i++) {
+   if(i == 3) continue;
+   System.out.print(i + " ");
+}
+// Output: 1 2 4 5
+// Labeled continue
+outer:
+for(int i = 1; i <= 3; i++) {
+   for(int j = 1; j <= 3; j++) {
+       if(i == 2 && j == 2) continue outer;
+       System.out.println(i + " " + j);
+   }
+}
+// Output excludes "2 2"
+
+
+return Statement
+ 
+
+
+The return statement is used to exit a method and transfer control back to the calling method. It can optionally pass a value to the caller.
+
+ 
+
+Syntax:
+ 
+
+return;       // Without returning a value
+return value; // With a value
+ 
+
+Example:
+
+ 
+
+public class ReturnExample {
+    public static void main(String[] args) {
+        displayMessage();
+    }
+
+    public static void displayMessage() {
+        System.out.println("Hello, World!");
+        return; // Exits the method
+    }
+}
+ 
+
+Key Points:
+The return statement must match the method’s return type.
+It is optional for methods with a void return type.
+Essential for methods that compute and send back results.
+
+
+Arrays
+ 
+
+ 
+
+An array is a fixed-size collection of elements of the same type stored in contiguous memory. Each element is accessed via its index, starting from 0.
+
+ 
+
+Types of Arrays
+Single-Dimensional Array: Stores elements linearly, e.g., int[] arr.
+Multi-Dimensional Array:
+2D Arrays: Tabular format with rows and columns, e.g., int[][] arr.
+3D Arrays: Adds a depth dimension, e.g., int[][][] arr.
+Properties of Arrays:
+All elements share the same type and size.
+Stored in contiguous memory locations.
+Base address identifies the first element.
+Example: For an array with base address 200, the address of the element at index 4 is calculated as:
+200 + 4 * sizeof(type).
+
+
+Advantages of Arrays:
+ 
+
+Provide O(1) access time using indices.
+Ideal for organizing related data or multidimensional structures.
+Efficient for quick modifications when the index is known.
+ 
+Disadvantages of Arrays:
+ 
+
+Fixed size, making dynamic resizing impossible.
+Insertion/deletion is costly due to element shifting.
+Inefficient memory usage if size is over/underestimated.
+
+
+Static vs Dynamic Arrays
+ 
+
+ 
+
+1. Static Arrays:
+Definition: Fixed-size arrays defined during initialization.
+Cannot resize after creation.
+Faster as no resizing operations are needed.
+Limited flexibility for dynamic data.
+Use Case: Storing a fixed list of categories or static resources (e.g., menu items).
+Example:
+
+ 
+
+// Static Array
+int[] staticArray = new int[5];
+staticArray[0] = 10; // Assigning values
+System.out.println(staticArray[0]); // Accessing values
+ 
+2. Dynamic Arrays:
+Definition: Resizable arrays provided by classes like ArrayList.
+Automatically resizes when adding/removing elements.
+Slower due to resizing overhead.
+Requires import java.util.ArrayList.
+Use Case: Managing dynamic content like user comments, form inputs, or product listings.
+Example:
+
+ 
+
+import java.util.ArrayList;
+
+// Dynamic Array
+ArrayList<Integer> dynamicArray = new ArrayList<>();
+dynamicArray.add(10); // Adding elements
+dynamicArray.add(20);
+System.out.println(dynamicArray.get(0)); // Accessing values
+dynamicArray.remove(1); // Removing an element
+
+
+Traversal in an Array
+ 
+
+ 
+
+Traversal refers to accessing each element of an array, one by one, either to read or modify the elements.
+
+ 
+
+Example: Traversing an Array Using a Loop
+ 
+
+public class ArrayTraversal {
+    public static void main(String[] args) {
+        int[] numbers = {10, 20, 30, 40, 50};
+
+        // Traversing using a for loop
+        for (int i = 0; i < numbers.length; i++) {
+            System.out.println("Element at index " + i + ": " + numbers[i]);
+        }
+
+        // Traversing using a for-each loop
+        for (int num : numbers) {
+            System.out.println(num);
+        }
+    }
+}
+ 
+
+Output:
+ 
+
+Element at index 0: 10
+Element at index 1: 20
+Element at index 2: 30
+Element at index 3: 40
+Element at index 4: 50
+10
+20
+30
+40
+50
+ 
+
+Key Points:
+
+Use a for loop for accessing elements with their indices.
+Use a for-each loop for simple iteration when index is not needed.
+
+
+Searching in an Array
+ 
+
+ 
+
+Searching for an element in an array can be done using various algorithms like Linear Search and Binary Search.
+
+The most basic one is linear search, where we find an element by traversing each index from first to last. 
+
+Example:
+public class SearchArray {
+    public static void main(String[] args) {
+        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        int target = 7; // Element to search
+        boolean found = false;
+
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == target) {
+                found = true;
+                break;
+            }
+        }
+
+        if (found) {
+            System.out.println("Item found");
+        } else {
+            System.out.println("Item not found");
+        }
+    }
+}
+//Output: Item found
+Time Complexity: O(N).
+Use Linear Search for unsorted arrays or small datasets for simplicity.
+
+
+nsertion of an Element in an Array
+ 
+
+ 
+
+Steps:
+
+Create a new array (if needed) with an increased size to accommodate the new element.
+Shift elements to the right to create space for the new element.
+Insert the element at the desired index.
+ 
+
+Let’s code a program to insert an element in a given array-
+
+ 
+
+int main()
+{
+   int arr[size] = {1, 20, 5, 78, 30};
+   int element, pos, i;
+   printf("Enter position and element\n");
+   scanf("%d%d",&pos,&element);
+   if(pos <= size && pos >= 0)
+   {
+       //shift all the elements from the last index to pos by 1 position to the right
+       for(i = size; i > pos; i--)
+           arr[i] = arr[i-1];
+       //Insert element at the given position
+       arr[pos] = element;
+   */
+       for(i = 0; i <= size-1; i++)
+           printf("%d ", arr[i]);
+   }
+   else
+       printf("Invalid Position\n");
+   return 0;
+ }
+
+
+Deletion of an Element in an Array
+ 
+ 
+
+Steps:
+
+Find the index of the element to delete.
+Shift all elements after the index to the left by one position.
+Reduce the size of the array (if applicable).
+Example: Deleting an element at index 2.
+
+ 
+
+public class DeleteElement {
+    public static void main(String[] args) {
+        int[] arr = {10, 20, 30, 40, 50};
+        int indexToDelete = 2; // Deleting 30
+        
+        // Shifting elements
+        for (int i = indexToDelete; i < arr.length - 1; i++) {
+            arr[i] = arr[i + 1];
+        }
+        
+        // Print the updated array
+        for (int i = 0; i < arr.length - 1; i++) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+}
+// Output: 10 20 40 50
+ 
+
+Time Complexity:
+
+O(N - i) for deletion at index i (shifting elements).
+O(N) for deleting from the beginning.
+O(1) for deleting from the end.
+
+
+Time Complexity of Array Operations
+ 
+
+ 
+
+Accessing Elements:
+O(1): Direct access using indices due to contiguous memory storage.
+Inserting Elements:
+At the end: O(1) (if space is available).
+At index i: O(N - i) (requires shifting elements).
+At the beginning: O(N) (shift all elements right).
+Finding Elements:
+O(N): Linear search in the worst case.
+Deleting Elements:
+From the end: O(1).
+At index i: O(N - i) (requires shifting elements left).
+From the beginning: O(N) (shift all elements left).
+
+
+Real-Time Examples of Arrays in Coding Problems
+ 
+
+ 
+
+Data Storage:
+Arrays are commonly used to store lists of related data, such as names, email addresses, or database records, enabling efficient retrieval and manipulation.
+Matrix Operations:
+Arrays represent matrices for mathematical operations like addition, subtraction, or multiplication, often used in scientific computations and graphics.
+Counting and Tracking:
+Arrays help count occurrences, such as tracking the frequency of letters in a string or monitoring stock prices over a period.
+Game Development:
+2D arrays are used to create grids for games like chess or tic-tac-toe, enabling easy representation of game states.
+Image Processing:
+Arrays store pixel data to perform operations like filtering, sharpening, or blurring images for visual processing.
