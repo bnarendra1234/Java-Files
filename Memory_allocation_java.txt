@@ -1,29 +1,21 @@
 Introduction
  
-
- 
-
-Memory allocation in java specifies the mechanism where the computer programs and services are assigned dedicated virtual memory spaces. The Java Virtual Machine splits the memory into Stack and Heap Memory.
-
- 
-
+Memory allocation in java specifies the mechanism where the computer programs and services are assigned dedicated virtual memory spaces. 
+The Java Virtual Machine splits the memory into Stack and Heap Memory.
 
 Stack Memory
-
- 
 
 In Java, stack memory is used for static memory allocation and thread execution.
 
 Methods, local variables, and reference variables are all stored in the Stack portion of memory.
 
 
-Since they are interpreted in a Last-In-First-Out way, the values in this memory are temporary and restricted to particular methods. When a new method is created, a new block is generated on top of the stack that includes values specific to that method, such as primitive variables and object references.
+Since they are interpreted in a Last-In-First-Out way, the values in this memory are temporary and restricted to particular methods. 
+When a new method is created, a new block is generated on top of the stack that includes values specific to that method, such as primitive variables and object references.
 
 
 When a method completes its execution, the resulting stack frame is cleared, the flow returns to the calling method, and space for the next method becomes available.
 
-
- 
 
 Characteristics of Stack memory
 
@@ -40,7 +32,9 @@ As compared to heap memory, access to this memory is fast.
 Heap Memory
 
 
-Any time an object is created and allocated in Java Heap Space, it is used.  In heap memory, new objects are often formed, and references to these objects are stored in stack memory. Garbage Collection, a discrete function, keeps flushing the memory used by previous objects that have no reference. A Heap Space object can have unrestricted access throughout the program.
+Any time an object is created and allocated in Java Heap Space, it is used.  In heap memory, new objects are often formed, and references to these objects are stored in stack memory.
+Garbage Collection, a discrete function, keeps flushing the memory used by previous objects that have no reference. 
+A Heap Space object can have unrestricted access throughout the program.
 
 
 These objects are accessible from anywhere in the program and have global access.
@@ -49,7 +43,8 @@ These objects are accessible from anywhere in the program and have global access
 This memory model is divided into generations, which are as follows:
 
 Young Generation – All new objects are allocated to and aged in this memory. When this is complete, a minor garbage collection occurs.
-Old or Tenured Generation – This is the memory where long-lasting items are kept. When objects are stored in the Young Generation, an age threshold is set, and when that threshold is met, the object is transferred to the Old Generation.
+Old or Tenured Generation – This is the memory where long-lasting items are kept. When objects are stored in the Young Generation, an age threshold is set, 
+and when that threshold is met, the object is transferred to the Old Generation.
 Permanent Generation – This is a collection of JVM metadata for runtime classes and application methods.
  
 
@@ -62,12 +57,14 @@ Java throws java.lang.OutOfMemoryError, if the heap memory is full.
 Access to this memory is slower than access to stack memory.
 Unlike the stack, this memory is not immediately deallocated. Garbage Collector is used to free up unused objects in order to maintain memory efficiency.
 A heap, unlike a stack, is not thread-safe and must be protected by synchronizing the code properly.
-Only a reference is created in Java when we only declare a variable of a class type (memory is not allocated for the object). We must use new() to assign memory to an object. As a result, the heap memory is always assigned to the object.
+Only a reference is created in Java when we only declare a variable of a class type (memory is not allocated for the object). We must use new() to assign memory to an object. 
+As a result, the heap memory is always assigned to the object.
 
+
+Sample code in java
 
 Example:
 
- 
 
 class Test {
     void show() {
